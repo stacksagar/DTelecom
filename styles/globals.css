@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .container {
+    @apply mx-auto px-3 max-w-[1240px];
+  }
+
+  .base_input_wrapper {
+    @apply col-span-12 xl:col-span-6 flex flex-col gap-y-1;
+  }
+  .base_input_wrapper.full {
+    @apply lg:col-span-12;
+  }
+  .base_input_wrapper > label {
+    @apply flex items-center justify-start gap-x-1;
+  }
+  .base_input {
+    @apply w-full h-10 outline-none ring-2 ring-gray-300 focus:ring-purple-600 p-2 rounded-sm bg-white;
+  }
+
+  .blood_group_btns {
+    @apply flex flex-wrap gap-2 justify-end;
+  }
+  .blood_group_btns > button {
+    @apply px-2 py-1 rounded focus:ring bg-red-500 text-white text-xs;
+  }
+
+  .ds_title {
+    @apply text-xs font-semibold text-gray-600 w-full flex justify-between px-4 py-3 hover:bg-gray-300 uppercase;
+  }
+
+  .ds_ul > li a {
+    @apply flex items-center justify-start w-full gap-x-3 hover:bg-gray-200 rounded-sm px-4 py-3 capitalize font-medium text-gray-500 hover:text-gray-900;
+    font-size: 13px;
+  }
+}
+
+.sidebar {
+  scrollbar-width: thin;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 12px;
+  background: #555;
+  display: none;
+}
+.sidebar:hover::-webkit-scrollbar {
+  display: block;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #dddddd;
+  border-radius: 99px;
+  border: 3px solid #fff;
+}
+.sidebar::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+* {
+  outline: none;
+  scroll-behavior: smooth !important;
+}
+
+/* === Loading CSS === */
+.loading {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.loading div {
+  position: absolute;
+  background: #fff;
+  opacity: 1;
+  border-radius: 50%;
+  animation: loading 1.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.loading div:nth-child(2) {
+  animation-delay: -0.7s;
+}
+
+@keyframes loading {
+  0% {
+    top: 28px;
+    left: 28px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: -1px;
+    left: -1px;
+    width: 58px;
+    height: 58px;
+    opacity: 0;
+  }
+}
+
+@font-face {
+  font-family: "Bangla";
+  src: url("/fonts/Bangla.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  font-family: "Bangla", "arial";
+}
+
+.sans {
+  font-family: "arial", sans-serif !important;
+}
+
+.bn {
+  font-family: "Bangla", sans-serif !important;
+}
+
+@media (max-width: 991px) {
+  #logo {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  @media print {
+    .hide_print_mobile {
+      display: none !important;
+    }
+    .opacity_print_mobile {
+      opacity: 0 !important;
+    }
+    .Toastify {
+      display: none !important;
+    }
+  }
+}
+
+@media print {
+  body {
+    padding-top: 75.3px !important;
+  }
+}
+
+#nid_front,
+#nid_back {
+  width: 323.5px;
+  height: 205px;
+}
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
