@@ -10,7 +10,7 @@ const Landing = () => {
       <section className="bg-white">
         <div className="flex items-center justify-between px-6 py-6">
           <h3 className="text-lg font-bold">সার্ভিস সমূহ</h3>
-          <button className="bg-gradient-to-r from-blue-600 to-blue-600 text-white px-8 py-1.5 rounded-full focus:ring">
+          <button className="bg-gradient-to-r from-blue-600 to-blue-600 text-white px-6 py-1.5 rounded-full focus:ring">
             ব্যালেন্স
           </button>
         </div>

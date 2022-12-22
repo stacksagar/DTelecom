@@ -4,8 +4,14 @@ import { faBell } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Header = () => {
   return (
-    <header className="relative bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-9">
-      <h1 className="text-xl text-white text-center">PolliTelecom</h1>
+    <header
+      style={{
+        backgroundImage: "url(images/header-bg.jpg)",
+        backgroundSize: "cover",
+      }}
+      className="relative bg-gradient-to-r from-blue-500 to-blue-600 px-6 h-44 flex items-center justify-center"
+    >
+      <h1 className="text-2xl text-white text-center"> ডিজিটাল লেনদেন </h1>
       <div className="absolute top-5 right-5">
         <button className="text-white text-sm">
           <FontAwesomeIcon icon={faBell} />

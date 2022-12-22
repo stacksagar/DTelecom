@@ -6,10 +6,12 @@ const ServiceBox = ({ title = "", image = "" }) => {
       href="##"
       className="col-span-4 py-2 px-2 flex flex-col items-center justify-center"
     >
-      <div className="bg-gray-300 p-2 shadow rounded-lg">
-        <img className="w-14" src={image} alt="" />
+      <div className="bg-gray-300 py-3 px-5 shadow rounded-2xl">
+        <img className="w-12" src={image} alt="" />
       </div>
-      <h6 className="font-medium text-lg p-2 text-center">{title}</h6>
+      <h6 className="pt-2 font-medium leading-4 flex items-start justify-center text-lg h-10 text-center">
+        {title}
+      </h6>
     </a>
   );
 };
