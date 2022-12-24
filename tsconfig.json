@@ -24,7 +24,8 @@
     "components/Common/Header.jsx",
     "pages/login.jsx",
     "pages/add-money.jsx",
-    "others/api/test.js"
+    "others/api/test.js",
+    "components/HOC/requireAuth.js"
   ],
   "exclude": ["node_modules"]
 }

@@ -1,17 +1,12 @@
-//
-
-import React from "react";
+import React, { useEffect } from "react";
 import Landing from "../components/Home/Landing";
-import ScreenLoading from "../components/Utils/ScreenLoading";
+import Layout from "../components/Utils/Layout";
 
 const Index = () => {
   return (
-    <main className="w-full bg-gray-200">
-      <div className="relative max-w-[450px] mx-auto bg-white">
-        <Landing />
-        {/* <ScreenLoading /> */}
-      </div>
-    </main>
+    <Layout>
+      <Landing />
+    </Layout>
   );
 };
 

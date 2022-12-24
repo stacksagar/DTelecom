@@ -7,15 +7,35 @@ import {
   updateProfile,
 } from "firebase/auth";
 
+import set_formError from "../utils/set_formError";
+import set_user from "../utils/set_user";
+import { ref, set } from "firebase/database";
+
 const AuthState = {
-  user: {},
+  user: null,
+  formError: "",
+  authLoading: false,
 };
 
 const reducer = (state = AuthState, action) => {
   const { type, payload } = action;
   switch (type) {
     case "set_user":
-      return { ...state, user: { ...payload } };
+      return { ...state, user: payload };
+
+    case "set_formError":
+      return { ...state, formError: payload };
+
+    case "clear_formError":
+      return { ...state, formError: "" };
+
+    case "set_authLoading":
+      return { ...state, authLoading: true };
+    case "clear_authLoading":
+      return { ...state, authLoading: false };
+
+    case "logout":
+      return { ...state, user: null };
 
     default:
       return state;
@@ -28,32 +48,52 @@ const AuthProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, AuthState);
 
   useEffect(() => {
-    return auth.onAuthStateChanged((user) => {});
+    return auth.onAuthStateChanged((user) => {
+      set_user(dispatch, user);
+    });
   }, []);
 
-  function register(form) {
-    dispatch({ type: "set_loading" });
-    return createUserWithEmailAndPassword(auth, form?.email, form?.new_password)
+  function register(values) {
+    dispatch({ type: "set_authLoading" });
+    return createUserWithEmailAndPassword(auth, values?.email, values?.password)
       .then(() => {
         updateProfile(auth.currentUser, {
-          photoURL: "default link",
+          photoURL: "https://i.ibb.co/kq3v481/user-318-875902.png",
+          displayName: values?.name,
         });
       })
-      .catch((error) => {})
-      .finally(() => {});
+      .catch((error) => {
+        set_formError(dispatch, error?.message?.split("Error")[1]);
+      })
+      .finally(() => {
+        dispatch({ type: "clear_authLoading" });
+
+        auth.onAuthStateChanged((user) => {
+          if (user?.uid) {
+            set(ref(db, `/users/${user?.uid}`), {
+              ...values,
+              balance: 0,
+              notifications: null,
+            });
+          }
+        });
+      });
   }
 
   function logout() {
+    dispatch({ type: "logout" });
     return signOut(auth);
   }
 
-  function login(email, password) {
-    return signInWithEmailAndPassword(auth, email, password)
-      .then(() => {
-        auth.onAuthStateChanged((user) => {});
+  function login(values) {
+    dispatch({ type: "set_authLoading" });
+    return signInWithEmailAndPassword(auth, values?.email, values?.password)
+      .catch((error) => {
+        set_formError(dispatch, error?.message?.split("Error")[1]);
       })
-      .catch((error) => {})
-      .finally(() => {});
+      .finally(() => {
+        dispatch({ type: "clear_authLoading" });
+      });
   }
 
   return (

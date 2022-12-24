@@ -1,8 +1,9 @@
 import React from "react";
 
-const ServiceBox = ({ title = "", image = "" }) => {
+const ServiceBox = ({ title = "", image = "", ...props }) => {
   return (
     <a
+      {...props}
       href="##"
       className="col-span-4 py-2 px-2 flex flex-col items-center justify-center"
     >

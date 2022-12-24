@@ -4,15 +4,12 @@ import { getAuth } from "firebase/auth";
 import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAXv81yXs4Jru-uIa1rI48pXGpEUQiX5ng",
-  authDomain: "document-generator-nextjs.firebaseapp.com",
-  databaseURL:
-    "https://document-generator-nextjs-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "document-generator-nextjs",
-  storageBucket: "document-generator-nextjs.appspot.com",
-  messagingSenderId: "706482267957",
-  appId: "1:706482267957:web:5ce37c95d27c81c9e04e7c",
-  measurementId: "G-R6P48EF5R3",
+  apiKey: "AIzaSyASfm1Y6uheZzI5KMwNRlKJyhp1q4zx7Ck",
+  authDomain: "pollitelecom-42c8b.firebaseapp.com",
+  projectId: "pollitelecom-42c8b",
+  storageBucket: "pollitelecom-42c8b.appspot.com",
+  messagingSenderId: "411888476549",
+  appId: "1:411888476549:web:2164c53325b3e712a464ec",
 };
 
 // Initialize Firebase

@@ -1,8 +1,15 @@
 import React from "react";
+import { useAuthContext } from "../../context/AuthContext";
 import Header from "./Header";
 import ServiceBox from "./ServiceBox";
 
 const Landing = () => {
+  const { logout } = useAuthContext();
+
+  function logout_handler() {
+    logout();
+  }
+
   return (
     <>
       <Header />
@@ -12,6 +19,9 @@ const Landing = () => {
           <h3 className="text-lg font-bold">সার্ভিস সমূহ</h3>
           <button className="bg-gradient-to-r from-blue-600 to-blue-600 text-white px-6 py-1.5 rounded-full focus:ring">
             ব্যালেন্স
+            {/* <span>
+              <img className="w-12" src="/images/balance-loading.gif" alt="" />
+            </span>  */}
           </button>
         </div>
 
@@ -70,6 +80,7 @@ const Landing = () => {
             image="https://cdn-icons-png.flaticon.com/512/1177/1177568.png"
           />
           <ServiceBox
+            onClick={logout_handler}
             title="লগআউট"
             image="https://cdn-icons-png.flaticon.com/512/4436/4436954.png"
           />
