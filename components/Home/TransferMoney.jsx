@@ -57,7 +57,11 @@ const TransferMoney = () => {
   }, [users, receiver_email]);
 
   function balance_transfer_handler() {
-    if (receiver_user?.name && transfer_amount > 0) {
+    if (
+      receiver_user?.name &&
+      transfer_amount > 0 &&
+      state?.user?.email?.trim() !== receiver_email?.trim()
+    ) {
       set_start_transfering(true);
       Object.entries(users || {}).map(([key, val]) => {
         const check_email = val?.email;
