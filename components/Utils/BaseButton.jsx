@@ -19,9 +19,9 @@ const BaseButton = ({
       <span>{children}</span>
 
       {loading ? (
-        <span className="block w-6 h-6 border-[3px] border-t-transparent animate-spin rounded-full"></span>
+        <span className="block w-5 h-5 border-[3px] border-t-transparent animate-spin rounded-full"></span>
       ) : (
-        <span className="block w-6"></span>
+        <span className="block w-5"></span>
       )}
     </button>
   );

@@ -106,80 +106,12 @@
   font-style: normal;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
 * {
-  font-family: "Bangla", "arial";
-}
-
-.sans {
-  font-family: "arial", sans-serif !important;
+  font-family: "Roboto", sans-serif;
 }
 
 .bn {
   font-family: "Bangla", sans-serif !important;
-}
-
-@media (max-width: 991px) {
-  #logo {
-    display: none !important;
-  }
-}
-
-@media (max-width: 767px) {
-  @media print {
-    .hide_print_mobile {
-      display: none !important;
-    }
-    .opacity_print_mobile {
-      opacity: 0 !important;
-    }
-    .Toastify {
-      display: none !important;
-    }
-  }
-}
-
-@media print {
-  body {
-    padding-top: 75.3px !important;
-  }
-}
-
-#nid_front,
-#nid_back {
-  width: 323.5px;
-  height: 205px;
-}
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

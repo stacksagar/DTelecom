@@ -1,7 +1,10 @@
 import React from "react";
 import { useAuthContext } from "../../context/AuthContext";
+import BalanceArea from "./BalanceArea";
+
 import Header from "./Header";
 import ServiceBox from "./ServiceBox";
+import TransferMoney from "./TransferMoney";
 
 const Landing = () => {
   const { logout } = useAuthContext();
@@ -13,16 +16,10 @@ const Landing = () => {
   return (
     <>
       <Header />
-
       <section className="bg-white">
         <div className="flex items-center justify-between px-6 py-6">
-          <h3 className="text-lg font-bold">সার্ভিস সমূহ</h3>
-          <button className="bg-gradient-to-r from-blue-600 to-blue-600 text-white px-6 py-1.5 rounded-full focus:ring">
-            ব্যালেন্স
-            {/* <span>
-              <img className="w-12" src="/images/balance-loading.gif" alt="" />
-            </span>  */}
-          </button>
+          <h3 className="text-lg font-bold bn">সার্ভিস সমূহ</h3>
+          <BalanceArea />
         </div>
 
         <div className="grid grid-cols-12">
@@ -30,10 +27,9 @@ const Landing = () => {
             title="অ্যাড মানি"
             image="https://cdn-icons-png.flaticon.com/512/3687/3687106.png"
           />
-          <ServiceBox
-            title="ট্রান্সফার মানি"
-            image="https://cdn-icons-png.flaticon.com/512/7401/7401215.png"
-          />
+
+          <TransferMoney />
+
           <ServiceBox
             title="ক্যাশ আউট"
             image="https://cdn-icons-png.flaticon.com/512/8818/8818337.png"
